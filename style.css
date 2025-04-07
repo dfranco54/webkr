@@ -1,0 +1,219 @@
+:root{
+    --color_fondo: #6653b3;
+    --color_hover: #988ec2;
+    --letra_size: 2rem;
+}
+
+body{
+    background-color: #ffffffe5;
+    margin: 15px 30px 0 30px;
+    
+}
+
+h1, p, h4, a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero1, .hero2, .hero3 {
+    margin: 80px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color_fondo);
+    height: 115px;
+    padding: 0 15px;
+    border-radius: 25px;
+    margin-bottom: 5rem;
+}
+
+.navbar_marca img{
+    padding: 15px;
+    width: 100px;
+}
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    transition: background-color 0.3s;
+    background-color: aliceblue;
+    border-radius: 15px;
+    
+}
+
+.navbar a:hover{
+    background-color: var(--color_hover);
+}
+
+.hero1, .hero2, .hero3, footer{
+    margin-top: 15px;
+}
+
+#izquierda, #derecha{
+    display: flex;
+    gap: 1rem;
+}
+
+#derecha{
+    flex-direction: row-reverse;
+    margin-left: auto;
+}
+
+.hero1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://img.freepik.com/foto-gratis/mujeres-felices-mirando-mapa-viaje_23-2148375012.jpg?t=st=1743973417~exp=1743977017~hmac=bde8bfeed445f87bb6592f5e6dce9d030221fa4d588775837777898699a49f05&w=996");
+    background-size: cover;
+    height: 60vh;
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.hero1 h1, .hero1 p{
+    color: white;
+    filter: brightness(100%);
+}
+
+.hero1 h1{
+    font-size: 4rem;
+}
+
+.hero1 p{
+    font-size: var(--letra_size);
+}
+
+.hero1 button{
+    background-color: var(--color_fondo);
+}
+
+button{
+    background-color: var(--color_fondo);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+button:hover{
+    background-color: var(--color_hover);
+}
+
+.hero2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero2_titulo{
+    padding: 2rem;
+    font-size: 4rem;
+}
+
+.caja{
+    border: solid;
+    padding: 15px;
+    margin: 15px;
+    background-color: #f5f4f9;
+    border-radius: 25px;
+}
+
+.caja h4 {
+    font-size: var(--letra_size);
+}
+
+.caja p{
+    font-size: 1.3rem;
+}
+.caja img{
+    width: 35px;
+}
+
+.otro_hero3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+    gap: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero3_letras{
+    margin-bottom: 30px;
+
+}
+
+.hero3 button {
+    padding: 12px 24px;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero3 img {
+    max-width: 50rem;        /* Máximo ancho de la imagen */
+    border-radius: 25px;     /* Opcional: bordes redondeados */
+    margin: 0 20px;
+}
+
+.hero3 h4{
+    font-size: 4rem;
+}
+
+.hero3 li, .hero3 p{
+    font-size: var(--letra_size);
+}
+
+footer{
+    background-color: var(--color_fondo);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;  
+    padding: 2rem 5%;
+    color: white;
+    border-radius: 25px;
+}
+
+.divisiones_footer{
+    border: solid;
+}
+
+.divisiones_footer h3{
+    font-size: 2rem;
+}
+
+.firma{
+    display: flex;
+    flex-direction: column;
+}
+
+.firma img{
+    padding: 15px;
+    width: 150px;
+    margin: auto;
+}
+
+.firma button{
+    border: solid;
+    border-color: white;
+}
+
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .hero2{
+        grid-template-columns: 1fr;
+    }
+}
