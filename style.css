@@ -18,6 +18,39 @@ h1, p, h4, a{
     margin: 80px;
 }
 
+.hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.barra {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-mobile.activo {
+    display: flex;
+}
+
 .navbar{
     display: flex;
     justify-content: flex-start;
@@ -71,7 +104,6 @@ h1, p, h4, a{
 
 .hero1 h1, .hero1 p{
     color: white;
-    filter: brightness(100%);
 }
 
 .hero1 h1{
@@ -138,21 +170,30 @@ button:hover{
 .otro_hero3{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 2rem;
     gap: 8rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-.hero3_letras{
-    margin-bottom: 30px;
+.hero3_letras h4{
+    background-color: #f5f4f9;
+    font-size: 1.5vw;
+    border-radius: 15px;
+}
 
+.hero3_letras p{
+    font-size: 0.5vw;
+}
+
+.hero3_letras li{
+    font-size: 0.5vw;
 }
 
 .hero3 button {
     padding: 12px 24px;
-    margin-right: 1rem;
+    margin: 1rem;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -160,9 +201,12 @@ button:hover{
 }
 
 .hero3 img {
-    max-width: 50rem;        /* Máximo ancho de la imagen */
-    border-radius: 25px;     /* Opcional: bordes redondeados */
+    width: 100%;
+    max-width: 80rem;
+    height: auto;
+    border-radius: 25px;
     margin: 0 20px;
+    overflow: hidden;
 }
 
 .hero3 h4{
@@ -209,11 +253,72 @@ footer{
 
 
 @media (max-width: 768px) {
-    footer {
-        grid-template-columns: 1fr;
+
+    #izquierda, #derecha {
+        display: none;
+    }
+
+    .hamburguesa {
+        display: block;
+        margin: auto;
+    }
+
+    .menu-mobile.activo {
+        display: flex;
+        border-radius: 15px;
+    }
+
+    .hamburguesa.activo .barra:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburguesa.activo .barra:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburguesa.activo .barra:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero1, .hero2, .hero3 {
+        margin: 0px;
+    }
+
+    .hero1{
+        background-position:  40% 15%;
+        background-attachment: fixed;
+        background-repeat: no-repeat; background-size: cover;
+    }
+
+    .hero1 h1{
+        font-size: 3rem;
+    }
+    
+    .hero1 p{
+        font-size: var(--letra_size);
     }
 
     .hero2{
         grid-template-columns: 1fr;
     }
+
+    .otro_hero3{
+        flex-direction: column;
+    }
+
+    .otro_hero3 ul{
+        display: none;
+        margin: 0;
+    }
+
+    .imagen_hero3{
+        display: none;
+    }
+
+    .hero3_botones button{
+        margin: 15px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
 }
